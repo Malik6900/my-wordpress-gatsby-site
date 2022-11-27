@@ -69,8 +69,6 @@ module.exports = {
       },
     },
 
-    module.exports = {
-      plugins: [
         {
           resolve: `gatsby-plugin-styled-components`,
           options: {
@@ -78,8 +76,8 @@ module.exports = {
             displayName: false,
           },
         },
-      ],
-    },
+    
+
 
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     //`gatsby-plugin-react-helmet`,
