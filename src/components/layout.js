@@ -2,6 +2,8 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import parse from "html-react-parser"
 
+import Header from "./header/Header"
+
 const Layout = ({ isHomePage, children }) => {
   const {
     wp: {
@@ -19,6 +21,9 @@ const Layout = ({ isHomePage, children }) => {
   `)
 
   return (
+    <>
+    <Header />
+    
     <div className="global-wrapper" data-is-root-path={isHomePage}>
       <header className="global-header">
         {isHomePage ? (
@@ -42,6 +47,7 @@ const Layout = ({ isHomePage, children }) => {
         And <a href="https://wordpress.org/">WordPress</a>
       </footer>
     </div>
+    </>  
   )
 }
 
