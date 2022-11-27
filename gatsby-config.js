@@ -54,6 +54,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
+    
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
@@ -67,6 +68,18 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
+
+    module.exports = {
+      plugins: [
+        {
+          resolve: `gatsby-plugin-styled-components`,
+          options: {
+            // Add any options here
+            displayName: false,
+          },
+        },
+      ],
+    }
 
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     //`gatsby-plugin-react-helmet`,
