@@ -6,8 +6,8 @@ import { useMenuQuery } from "../hooks/useMenuQuery"
 import { Wrapper, Content } from "./Header.styles"
 
 const Header = () => {
-    const { wpMenu } = useMenuQuery()
-    console.log(wpMenu)
+    const { menu } = useMenuQuery()
+    console.log(menu)
 
     return (
         <Wrapper>
@@ -15,7 +15,7 @@ const Header = () => {
                 <Link to="/">
                     <img src={Logo} alt="logo" />
                 </Link>
-                <Navigation menu={wpMenu.menuItems.nodes} />
+                <Navigation menu={menu.menuItems.nodes} />
             </Content>
         </Wrapper>
     )

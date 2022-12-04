@@ -10,7 +10,7 @@ export const useMenuQuery = () => {
             description
           }
         }
-        wpMenu(name: {eq: "Main Menu"}) {
+        menu: wpMenu(name: {eq: "Main Menu"}) {
           menuItems {
             nodes {
               label

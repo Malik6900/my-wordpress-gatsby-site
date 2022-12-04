@@ -1,10 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import parse from "html-react-parser"
 
+import Hamburger from "./Hamburger/Hamburger"
+import OverlayMenu from "./OverlayMenu/OverlayMenu"
 import Header from "./header/Header"
+import Footer from "./Footer/Footer"
 
 const Layout = ({ isHomePage, children }) => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const handleOverlayMenu = () => setMenuOpen(prev => !prev)
+
   const {
     wp: {
       generalSettings: { title },
@@ -22,6 +28,8 @@ const Layout = ({ isHomePage, children }) => {
 
   return (
     <>
+    <Hamburger handleOverlayMenu={handleOverlayMenu} />
+    <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
     <Header />
     
     <div className="global-wrapper" data-is-root-path={isHomePage}>
@@ -39,14 +47,10 @@ const Layout = ({ isHomePage, children }) => {
 
       <main>{children}</main>
 
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-        {` `}
-        And <a href="https://wordpress.org/">WordPress</a>
-      </footer>
+  
     </div>
+
+    <Footer />
     </>  
   )
 }
